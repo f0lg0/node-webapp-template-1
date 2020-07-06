@@ -15,6 +15,8 @@ def generateCoreFiles(entryPoint, package):
 
 def buildFolderStructure(folders):
     global success
+
+    # exeptions should never happen because the process creates everything in a new folder but it's better to still handle them
     for folder, subfolders in folders.items():
         try:
             os.mkdir(folder)
@@ -26,13 +28,11 @@ def buildFolderStructure(folders):
                         print(f"[FAILED] Folder '{folder}/{subfolder}' already exists")
                         print("[PROCESS ABORTED]")
 
-                        success = False
                         break
         except FileExistsError:
             print(f"[FAILED] Folder '{folder}' already exists")
             print("[PROCESS ABORTED]")
 
-            success = False
             break
 
 
@@ -53,27 +53,36 @@ def installDependencies():
 def main():
     print("[RUNNING] Generating project...")
 
-    print("[WRITING] Core files...")
-    generateCoreFiles(entryPoint, package)
-    print("[DONE] Folder structure.") 
+    while success:
+        print("[WRITING] Core files...")
+        generateCoreFiles(entryPoint, package)
+        print("[DONE] Folder structure.") 
 
-    print("[BUILDING] Folder structure...")
-    buildFolderStructure(folders)
-    print("[DONE] Folder structure.")
+        print("[BUILDING] Folder structure...")
+        buildFolderStructure(folders)
+        print("[DONE] Folder structure.")
 
-    print("[WRITING] Readmes...")
-    populateWithReadme(readmes)
-    print("[DONE] Readmes.")
+        print("[WRITING] Readmes...")
+        populateWithReadme(readmes)
+        print("[DONE] Readmes.")
 
-    print("[WRITING] App files...")
-    generateApp(appFiles)
-    print("[DONE] App files.")
+        print("[WRITING] App files...")
+        generateApp(appFiles)
+        print("[DONE] App files.")
 
-    print("[INSTALLING] Dependencies from package.json...")
-    installDependencies()
-    print("[DONE] Installed dependencies.")
+        print("[INSTALLING] Dependencies from package.json...")
+        installDependencies()
+        print("[DONE] Installed dependencies.")
+        break
 
 if __name__ == '__main__':
+    try:
+        os.mkdir('app')
+    except FileExistsError:
+        print("[FAILED] Folder 'app already exists")
+        os._exit(1)
+
+    os.chdir('app')
     main()
 
     if success:
