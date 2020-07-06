@@ -7,61 +7,43 @@ The special chars below are not rendered as they are in Typora, so they look off
 
 ## Project Structure
 
-```
-.
-├── api/
-│	 └── date.js
-│	 └── readme.txt
-│
-├── config/
-│    └── readme.txt
-│
-├── controllers/
-│	 └── index.js
-│	 └── date.js
-│    └── readme.txt
-│
-├── middlewares/
-│    └── readme.txt
-│
-├── models/
-│	 └── readme.txt
-│
-├── public/
-│   └── css/
-│  	│ 	 └── styles.css
-│	│
-│   └── images/
-│   │	   └── readme.txt
-│	│
-│   └── javascript/
-│   │	   └── switchTheme.js
-│   │	   └── fetchDate.js
-│	│
-│	└── index.html
-│	└── 404.html
-│	└── readme.txt
-│
-├── routes/
-│   └── index.js
-│   └── api.js
-│   └── date.js
-│	└── readme.txt
-│
-├── views/
-│   └── index.ejs
-│	└── readme.txt
-│
-├── wireframes/
-│	  └── readme.txt
-│   
-├── server.js
-├── package.json
-├── package-lock.json
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+* api
+  * date.js
+  * readme.txt
+* config
+  * readme.txt
+* controllers
+  * date.js
+  * index.js
+  * readme.txt
+* middlewares
+  * readme.txt
+* models
+  * readme.txt
+* public
+  * css
+    * styles.css
+  * images
+    * readme.txt
+  * javascript
+    * switchTheme.js
+    * fetchDate.js
+  * 404.html
+  * index.html
+  * readme.txt
+* routes
+  * api.js
+  * date.js
+  * index.js
+  * readme.txt
+* views
+  * date.ejs
+  * readme.txt
+* wireframes
+  * readme.txt
+* package-lock.json
+* package.json
+* server.js
 
 ### Run
 
