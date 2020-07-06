@@ -43,6 +43,20 @@ A really simple NodeJS webapp template (REST API)
 * package.json
 * server.js
 
+
+
+### npm Packages
+
+* cookie-parser
+* dotenv
+* ejs
+* express
+* helmet
+* jsonwebtoken
+* mongoose
+* morgan
+* nodemon
+
 ### Run
 
 ```
