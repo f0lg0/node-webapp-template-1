@@ -8,50 +8,50 @@ A really simple NodeJS webapp template (REST API)
 ```
 .
 ├── api/
-│	└── date.js
-│	└── readme.txt
+│	   └── date.js
+│	   └── readme.txt
 │
 ├── config/
-│   └── readme.txt
+│    └── readme.txt
 │
 ├── controllers/
-│	└── index.js
-│	└── date.js
-│   └── readme.txt
+│	   └── index.js
+│	   └── date.js
+│    └── readme.txt
 │
 ├── middlewares/
-│   └── readme.txt
+│    └── readme.txt
 │
 ├── models/
-│	└── readme.txt
+│	   └── readme.txt
 │
 ├── public/
 │   └── css/
-│   │	└── styles.css
-│	│
+│   │	   └── styles.css
+│	  │
 │   └── images/
-│   │	└── readme.txt
-│	│
+│   │	   └── readme.txt
+│	  │
 │   └── javascript/
-│   │	└── switchTheme.js
-│   │	└── fetchDate.js
-│	│
-│	└── index.html
-│	└── 404.html
-│	└── readme.txt
+│   │	   └── switchTheme.js
+│   │	   └── fetchDate.js
+│	  │
+│	  └── index.html
+│	  └── 404.html
+│	  └── readme.txt
 │
 ├── routes/
 │   └── index.js
 │   └── api.js
 │   └── date.js
-│	└── readme.txt
+│	  └── readme.txt
 │
 ├── views/
 │   └── index.ejs
-│	└── readme.txt
+│	  └── readme.txt
 │
 ├── wireframes/
-│	└── readme.txt
+│	  └── readme.txt
 │   
 ├── server.js
 ├── package.json
