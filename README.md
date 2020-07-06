@@ -69,11 +69,23 @@ npm run dev
 
 
 
-### Coming Soon
+## Project Generator
 
-- [ ] Python script to generate project without Internet connection
+There's a project generator written in Python to generate everything you need without an Internet connection. It generates the same project template of this directory so you can get the same content even if you don't have the option to clone this repo. 
 
-  
+Why Python? Just because I am comfortable with it and it does the job (it is also fast).
+
+### Run
+
+```
+python3 generate.py
+```
+
+Just run this file and you will be go to go, it even install all the depndencies from the package.json file.
+
+The project template is taken from the template file, there you will find all the files and their relative content.
+
+Have fun with it and customize it as you like! If you tweak it, it can be used to generate other projects too!
 
 #### Other Info
 
