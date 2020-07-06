@@ -1,9 +1,7 @@
 # node-webapp-template
 A really simple NodeJS webapp template (REST API)
 
-#### Note
 
-The special chars below are not rendered as they are in Typora, so they look off. 
 
 ## Project Structure
 
