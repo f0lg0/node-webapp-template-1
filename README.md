@@ -45,7 +45,7 @@ A really simple NodeJS webapp template (REST API)
 
 
 
-### npm Packages
+## npm Packages
 
 * cookie-parser
 * dotenv
