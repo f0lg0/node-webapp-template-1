@@ -1,0 +1,77 @@
+.light-theme {
+    --color-primary: #FFF;
+    --color-secondary: #EAEAEA;
+    --color-tertiary: #666;
+    --color-quaternary: #FAFAFA;
+    --main-font-color: #000;
+    --main-font-color-hr: rgba(0, 0, 0, 0.75);
+    --secondary-font-color-hr: rgba(0, 0, 0, 0);
+}
+
+.dark-theme {
+    --color-primary: #000;
+    --color-secondary: #212121;
+    --color-tertiary: #333;
+    --color-quaternary: #111;
+    --main-font-color: #FAFAFA;
+    --main-font-color-hr: rgba(255, 255, 255, 0.75);
+    --secondary-font-color-hr: rgba(255, 255, 255, 0);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-primary);
+}
+
+.logo {
+    text-align: center;
+    font-weight: 500;
+    color: var(--main-font-color);
+}
+
+.errorBanner {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    text-align: center;
+    color: var(--main-font-color);
+}
+
+.hr-style-two {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    width: 70%;
+    background-image: linear-gradient(to right, var(--secondary-font-color-hr), var(--main-font-color-hr), var(--secondary-font-color-hr));
+}
+
+.action{
+    margin: auto;
+    width: 200px;
+}
+
+input[type=submit] {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: var(--main-font-color);
+    border: 1px solid var(--main-font-color);
+    color: var(--color-primary);
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: var(--color-primary);
+    color: var(--main-font-color);
+    border: 1px solid var(--main-font-color);
+    border-radius: 4px;
+}
