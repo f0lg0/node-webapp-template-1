@@ -93,6 +93,12 @@ The files are one-line pieces of code, you may want to beautify them.
 
 
 
+## Coming soon
+
+- [ ] Project Generator written in Javascript (NodeJS)
+
+
+
 #### Other Info
 
 For more informations about the template check the readme.md inside every folder.
