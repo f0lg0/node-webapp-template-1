@@ -7,38 +7,38 @@ A really simple NodeJS webapp template (REST API)
 
 * api
   * date.js
-  * readme.txt
+  * readme.md
 * config
-  * readme.txt
+  * readme.md
 * controllers
   * date.js
   * index.js
-  * readme.txt
+  * readme.md
 * middlewares
-  * readme.txt
+  * readme.md
 * models
-  * readme.txt
+  * readme.md
 * public
   * css
     * styles.css
   * images
-    * readme.txt
+    * readme.md
   * javascript
     * switchTheme.js
     * fetchDate.js
   * 404.html
   * index.html
-  * readme.txt
+  * readme.md
 * routes
   * api.js
   * date.js
   * index.js
-  * readme.txt
+  * readme.md
 * views
   * date.ejs
-  * readme.txt
+  * readme.md
 * wireframes
-  * readme.txt
+  * readme.md
 * package-lock.json
 * package.json
 * server.js
@@ -77,5 +77,5 @@ npm run dev
 
 #### Other Info
 
-For more informations about the template check the readme.txt inside every folder.
+For more informations about the template check the readme.md inside every folder.
 
