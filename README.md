@@ -87,6 +87,12 @@ The project template is taken from the template file, there you will find all th
 
 Have fun with it and customize it as you like! If you tweak it, it can be used to generate other projects too!
 
+### Note
+
+The files are one-line pieces of code, you may want to beautify them.
+
+
+
 #### Other Info
 
 For more informations about the template check the readme.md inside every folder.
