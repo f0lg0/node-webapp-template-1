@@ -1,5 +1,5 @@
 # node-webapp-template
-A really simple NodeJS webapp template (REST API)
+A really simple NodeJS webapp template (REST API) + Offline project generator
 
 
 

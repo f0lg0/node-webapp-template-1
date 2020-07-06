@@ -79,7 +79,7 @@ if __name__ == '__main__':
     try:
         os.mkdir('app')
     except FileExistsError:
-        print("[FAILED] Folder 'app already exists")
+        print("[FAILED] Folder 'app' already exists")
         os._exit(1)
 
     os.chdir('app')
