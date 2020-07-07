@@ -45,6 +45,10 @@ const QUESTIONS = [
   }
 ];
 
+function createProjectFolder(projectName) {
+  fs.mkdirSync(projectName);
+}
+
 function updateDefaultPackageJSON(packagejson, name, version, description, author, license) {
   packagejson['name'] = name;
   packagejson['version'] = version;
@@ -53,6 +57,18 @@ function updateDefaultPackageJSON(packagejson, name, version, description, autho
   packagejson['license'] = license;
 
   return packagejson;
+}
+
+function createPackageJSON(projectFolder, packagejson) {
+  fs.writeFileSync(`${projectFolder}/package.json`, packagejson, 'utf-8');
+}
+
+function createCoreFIles(projectFolder, entryPoint) {
+  const entries = Object.entries(entryPoint);
+
+  for (const [file, content] of entries) {
+    fs.writeFileSync(`${projectFolder}/${file}`, content, 'utf-8');
+  }
 }
 
 inquirer.prompt(QUESTIONS)
@@ -64,28 +80,24 @@ inquirer.prompt(QUESTIONS)
     const author = answers['author'];
     const license = answers['license'];
 
-    const appDetails =  {
-        name: name,
-        version: "1.0.0",
-        description: description,
-        author: author,
-        license: license
-    }
-
-    const details = JSON.stringify(appDetails);
     const data = JSON.parse(fs.readFileSync(`templates/${template}`));
 
     // creating project directory
-    console.log("[CREATING] Project folder")
-    fs.mkdirSync(name);
-    console.log("[*] Done")
+    console.log("[CREATING] Project folder");
+    createProjectFolder(name)
+    console.log("[*] Done");
 
     // updating packagejson with app details
     const packagejson = JSON.stringify(updateDefaultPackageJSON(data.packagejson, name, version, description, author, license));
 
-    // writing packagejson
-    console.log("[WRITING] package.json")
-    fs.writeFileSync(`${name}/package.json`, packagejson, 'utf-8');
-    console.log("[*] Done")
+    // creating packagejson
+    console.log("[CREATING] package.json");
+    createPackageJSON(name, packagejson);
+    console.log("[*] Done");
+
+    // creating core files
+    console.log("[CREATING] Core files...");
+    createCoreFIles(name, data.entryPoint);
+    console.log("[*] Done");
 
 });
