@@ -1,7 +1,9 @@
 # node-webapp-template
 A really simple NodeJS webapp template (REST API) + Offline project generator
 
-
+# DISCLAIMER
+Tomorrow I will move the project generator to a new repo to keep everything more organized.
+Stay tuned.
 
 ## Project Structure
 
