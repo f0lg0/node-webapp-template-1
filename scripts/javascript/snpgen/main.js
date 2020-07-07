@@ -84,6 +84,14 @@ function buildFolderStructure(folders) {
   }
 }
 
+function populateWithReadmes(readmes) {
+  const entries = Object.entries(readmes);
+
+  for (const [folder, readme] of entries) {
+    fs.writeFileSync(`${folder}/readme.md`, readme, 'utf-8');
+  }
+}
+
 inquirer.prompt(QUESTIONS)
   .then(answers => {
     const template = answers['template'];
@@ -116,9 +124,14 @@ inquirer.prompt(QUESTIONS)
     createCoreFIles(data.entryPoint);
     console.log("[*] Done");
 
-    // creating core files
+    // building folder structure
     console.log("[BUILDING] Folder structure...");
     buildFolderStructure(data.folders);
+    console.log("[*] Done");
+
+    // populating with readmes
+    console.log("[POPULATING] Folders with readmes...");
+    populateWithReadmes(data.readmes);
     console.log("[*] Done");
 
 });
