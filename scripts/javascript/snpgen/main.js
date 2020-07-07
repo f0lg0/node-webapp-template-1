@@ -1,65 +1,87 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const CHOICES = fs.readdirSync('./templates');
+
 const QUESTIONS = [
+  {
+    name: 'template',
+    type: 'list',
+    message: 'What project template would you like to generate? (simple-node-webapp)',
+    default: 'simple-node-webapp.json',
+    choices: CHOICES
+  },
+
   {
     name: 'name',
     type: 'input',
     message: 'Project name:'
   },
+
+  {
+    name: 'version',
+    type: 'input',
+    default: '1.0.0',
+    message: 'Version (1.0.0):'
+  },
+
   {
     name: 'description',
     type: 'input',
     message: 'Project description:'
   },
+
   {
     name: 'author',
     type: 'input',
     message: 'Author:'
+  },
+
+  {
+    name: 'license',
+    type: 'input',
+    default: 'MIT',
+    message: 'License (MIT):'
   }
 ];
 
+function updateDefaultPackageJSON(packagejson, name, version, description, author, license) {
+  packagejson['name'] = name;
+  packagejson['version'] = version;
+  packagejson['description'] = description;
+  packagejson['author'] = author;
+  packagejson['license'] = license;
+
+  return packagejson;
+}
 
 inquirer.prompt(QUESTIONS)
   .then(answers => {
+    const template = answers['template'];
     const name = answers['name'];
+    const version = answers['version'];
     const description = answers['description'];
     const author = answers['author'];
+    const license = answers['license'];
 
-    // this is based on the simple-node-webapp template
     const appDetails =  {
         name: name,
         version: "1.0.0",
         description: description,
-        main: "server.js",
-        scripts: {
-            start: "node server.js",
-            dev: "nodemon server.js"
-        },
         author: author,
-        license: "MIT",
-        dependencies: {
-            "cookie-parser": "^1.4.5",
-            "dotenv": "^8.2.0",
-            "ejs": "^3.1.3",
-            "express": "^4.17.1",
-            "helmet": "^3.23.3",
-            "jsonwebtoken": "^8.5.1",
-            "mongoose": "^5.9.21",
-            "morgan": "^1.10.0"
-        },
-        devDependencies: {
-            "nodemon": "^2.0.4"
-        }
+        license: license
     }
 
-    const packagejson = JSON.stringify(appDetails);
+    const details = JSON.stringify(appDetails);
+    const data = JSON.parse(fs.readFileSync(`templates/${template}`));
 
     // creating project directory
     console.log("[CREATING] Project folder")
     fs.mkdirSync(name);
     console.log("[*] Done")
 
+    // updating packagejson with app details
+    const packagejson = JSON.stringify(updateDefaultPackageJSON(data.packagejson, name, version, description, author, license));
 
     // writing packagejson
     console.log("[WRITING] package.json")
