@@ -59,15 +59,28 @@ function updateDefaultPackageJSON(packagejson, name, version, description, autho
   return packagejson;
 }
 
-function createPackageJSON(projectFolder, packagejson) {
-  fs.writeFileSync(`${projectFolder}/package.json`, packagejson, 'utf-8');
+function createPackageJSON(packagejson) {
+  fs.writeFileSync(`package.json`, packagejson, 'utf-8');
 }
 
-function createCoreFIles(projectFolder, entryPoint) {
+function createCoreFIles(entryPoint) {
   const entries = Object.entries(entryPoint);
 
   for (const [file, content] of entries) {
-    fs.writeFileSync(`${projectFolder}/${file}`, content, 'utf-8');
+    fs.writeFileSync(file, content, 'utf-8');
+  }
+}
+
+function buildFolderStructure(folders) {
+  const entries = Object.entries(folders);
+
+  for (const [folder, subfolders] of entries) {
+    fs.mkdirSync(folder);
+    if (subfolders) {
+      for (const subfolder of subfolders) {
+        fs.mkdirSync(`${folder}/${subfolder}`);
+      }
+    }
   }
 }
 
@@ -87,17 +100,25 @@ inquirer.prompt(QUESTIONS)
     createProjectFolder(name)
     console.log("[*] Done");
 
+    // cd in newly created project folder
+    process.chdir(name);
+
     // updating packagejson with app details
     const packagejson = JSON.stringify(updateDefaultPackageJSON(data.packagejson, name, version, description, author, license));
 
     // creating packagejson
     console.log("[CREATING] package.json");
-    createPackageJSON(name, packagejson);
+    createPackageJSON(packagejson);
     console.log("[*] Done");
 
     // creating core files
     console.log("[CREATING] Core files...");
-    createCoreFIles(name, data.entryPoint);
+    createCoreFIles(data.entryPoint);
+    console.log("[*] Done");
+
+    // creating core files
+    console.log("[BUILDING] Folder structure...");
+    buildFolderStructure(data.folders);
     console.log("[*] Done");
 
 });
