@@ -1,10 +1,6 @@
 # node-webapp-template
 A really simple NodeJS webapp template (REST API) + Offline project generator
 
-# DISCLAIMER
-Tomorrow I will move the project generator to a new repo to keep everything more organized.
-Stay tuned.
-
 ## Project Structure
 
 * api
@@ -46,7 +42,6 @@ Stay tuned.
 * server.js
 
 
-
 ## npm Packages
 
 * cookie-parser
@@ -69,37 +64,11 @@ npm install .
 npm run dev
 ```
 
-
-
 ## Project Generator
 
-There's a project generator written in Python to generate everything you need without an Internet connection. It generates the same project template of this directory so you can get the same content even if you don't have the option to clone this repo. 
+MOVED PROJECT GENERATOR [HERE](https://github.com/f0lg0/snpgen)
 
-Why Python? Just because I am comfortable with it and it does the job (it is also fast).
-
-### Run
-
-```
-python3 generate.py
-```
-
-Just run this file and you will be go to go, it even install all the depndencies from the package.json file.
-
-The project template is taken from the template file, there you will find all the files and their relative content.
-
-Have fun with it and customize it as you like! If you tweak it, it can be used to generate other projects too!
-
-### Note
-
-The files are one-line pieces of code, you may want to beautify them.
-
-
-
-## Coming soon
-
-- [ ] Project Generator written in Javascript (NodeJS)
-
-
+There's a project generator written in Python and Javascript (still under development) to generate everything you need without an Internet connection. It generates the same project template of this directory so you can get the same content even if you don't have the option to clone this repo. 
 
 #### Other Info
 
