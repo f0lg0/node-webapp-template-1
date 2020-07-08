@@ -5,4 +5,4 @@ const date = require('../controllers/date.js');
 
 router.get('/', date.renderPage);
 
-module.exports = router
+module.exports = router;
