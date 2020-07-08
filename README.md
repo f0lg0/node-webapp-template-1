@@ -1,4 +1,4 @@
-# node-webapp-template
+# node-webapp-template-1
 A really simple NodeJS webapp template (REST API) structured by dividing content by technical role. This is not recognized as a "best practice" but I find it easy to understand. 
 Check out my other components structured template [HERE](https://github.com/f0lg0/node-webapp-template-2)
 
