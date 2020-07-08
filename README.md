@@ -1,6 +1,6 @@
 # node-webapp-template
 A really simple NodeJS webapp template (REST API) structured by dividing content by technical role. This is not recognized as a "best practice" but I find it easy to understand. 
-I'm also building a component divided template so stay tuned!
+Check out my other components structured template [HERE](https://github.com/f0lg0/node-webapp-template-2)
 
 ## Project Structure
 
