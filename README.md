@@ -1,5 +1,6 @@
 # node-webapp-template
-A really simple NodeJS webapp template (REST API) + Offline project generator
+A really simple NodeJS webapp template (REST API) structured by dividing content by technical role. This is not recognized as a "best practice" but I find it easy to understand. 
+I'm also building a component divided template so stay tuned!
 
 ## Project Structure
 
@@ -68,7 +69,7 @@ npm run dev
 
 MOVED PROJECT GENERATOR [HERE](https://github.com/f0lg0/snpgen)
 
-There's a project generator written in Python and Javascript (still under development) to generate everything you need without an Internet connection. It generates the same project template of this directory so you can get the same content even if you don't have the option to clone this repo. 
+There's a project generator written in Python and Javascript to generate everything you need without an Internet connection. It generates the same project template of this directory so you can get the same content even if you don't have the option to clone this repo. 
 
 #### Other Info
 
