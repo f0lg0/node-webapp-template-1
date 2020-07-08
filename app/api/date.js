@@ -7,4 +7,4 @@ exports.today = (req, res) => {
         month: date.getUTCMonth() + 1,
         day: date.getUTCDate()
     });
-}
+};
